@@ -8,5 +8,27 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@tuicom/l10n": "^5.0.2"
+  },
+  "l10n": {
+    "directory": "l10n",
+    "locales": [
+      "de-DE",
+      "fr-FR"
+    ],
+    "extract": [
+      "main.js"
+    ],
+    "tables": {
+      "l10n/translations.json": [
+        "main.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@tuicom/l10n-tools": "^5.0.0",
+    "parcel": "^1.12.4"
+  }
 }
