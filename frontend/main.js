@@ -15,14 +15,14 @@ export class Tui6mTutorialComponent extends HTMLElement {
         // Attach the shadow DOM
         this.shadow = this.attachShadow({mode: 'open'});
 
-        // Initialize the translation creating a new instance of L10n & passing the
+        // Initialize the translation by creating a new instance of L10n & passing the
         // translations & the locale attribute of the custom component to its constructor
         this.l10n = new L10n(translations, this.getAttribute("locale"));
     }
 
     // Make the component aware of the locale attribute
     static get observedAttributes() {
-        return ['locale']
+        return ['locale', 'level']
     }
 
     // Invoked each time the custom element is appended into a document-connected element
@@ -39,6 +39,18 @@ export class Tui6mTutorialComponent extends HTMLElement {
                     border: 5px solid #aaa;
                     background: #daffd5;
                     padding: 20px;
+                }
+                
+                :host([level="safe"]) {
+                    border-color: steelblue;
+                }
+                
+                :host([level="warning"]) {
+                    border-color: #ff9900
+                }
+
+                :host([level="alert"]) {
+                    border-color: #900
                 }
             </style>
             
