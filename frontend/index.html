@@ -2,12 +2,36 @@
 <head>
     <meta charset="utf-8">
     <title>Web Component Demo</title>
+    <script src="https://api.tui.com/ml/cotton-ball/"></script>
 </head>
 <body>
 <!-- Load the main js first so that the tui 6m component can be used -->
 <script src="/main.js" async defer></script>
 
 <!-- TUI 6m tutorial component -->
-<tui-6m-tutorial-component locale="de-DE" level="safe"></tui-6m-tutorial-component>
+<tui-6m-tutorial-component locale="de-DE" level="safe"/>
+
+<!-- Script to listen for the click event -->
+<script>
+    // Subscribe to the click event
+    tuiCottonBall.subscribe(
+        "tutorial-component",
+        '*',
+        "click",
+        (componentName, scope, eventName, data) =>
+            console.log(componentName, scope, eventName, data)
+    );
+
+
+    // change the component background color after x seconds
+    setTimeout(() => {
+        tuiCottonBall.publish(
+            "tutorial-component",
+            '*',
+            "changeBackground",
+            { color: "#00c2ff" }
+        )
+    }, 3000)
+</script>
 </body>
 </html>
