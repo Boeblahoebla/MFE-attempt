@@ -29,6 +29,6 @@
   },
   "devDependencies": {
     "@tuicom/l10n-tools": "^5.0.0",
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.2"
   }
 }
